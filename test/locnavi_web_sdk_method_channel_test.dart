@@ -21,4 +21,12 @@ void main() {
   test('getPlatformVersion', () async {
     expect(await platform.getPlatformVersion(), '42');
   });
+
+  test('init', () async {
+    expect(await platform.init('appKey'), 0);
+  });
+
+  test('openMap', () async {
+    expect(await platform.openMap('mapId'), 0);
+  });
 }

@@ -10,6 +10,12 @@ class MockLocnaviWebSdkPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false}) => Future.value(0);
+
+  @override
+  Future<int?> openMap(String mapId, [String? poi]) => Future.value(0);
 }
 
 void main() {
@@ -25,5 +31,21 @@ void main() {
     LocnaviWebSdkPlatform.instance = fakePlatform;
 
     expect(await locnaviWebSdkPlugin.getPlatformVersion(), '42');
+  });
+
+  test('init', () async {
+    LocnaviWebSdk locnaviWebSdkPlugin = LocnaviWebSdk();
+    MockLocnaviWebSdkPlatform fakePlatform = MockLocnaviWebSdkPlatform();
+    LocnaviWebSdkPlatform.instance = fakePlatform;
+
+    expect(await locnaviWebSdkPlugin.init('appKey'), 0);
+  });
+
+  test('openMap', () async {
+    LocnaviWebSdk locnaviWebSdkPlugin = LocnaviWebSdk();
+    MockLocnaviWebSdkPlatform fakePlatform = MockLocnaviWebSdkPlatform();
+    LocnaviWebSdkPlatform.instance = fakePlatform;
+
+    expect(await locnaviWebSdkPlugin.openMap('mapId'), 0);
   });
 }
