@@ -40,13 +40,14 @@
       if (uploadApi) {
           [LocNaviMapService setUploadLocationApi:uploadApi timeInterval:uploadInterval];
       }
-    
+      result(0);
   } else if ([@"openMap" isEqualToString:call.method]) {
       NSString *mapId = call.arguments[@"mapId"];
       NSString *poi = call.arguments[@"poi"];
 
       UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
       if (!rootVC) {
+        result(-1);
         return;
       }
       LocNaviWebViewController *vc;
@@ -57,7 +58,8 @@
       }
       vc.modalPresentationStyle = UIModalPresentationFullScreen;
       [rootVC presentViewController:vc animated:YES completion:nil];
-    }
+      result(0);
+  }
   else {
     result(FlutterMethodNotImplemented);
   }

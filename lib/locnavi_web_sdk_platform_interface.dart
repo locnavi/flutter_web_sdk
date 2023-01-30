@@ -27,11 +27,11 @@ abstract class LocnaviWebSdkPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<void> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval: 1000, List<String>? uuids, debug: false }) async {
+  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false }) async {
     throw UnimplementedError('setAppKey() has not been implemented.');
   }
 
-  Future<void> openMap(String mapId, [String? poi]) async {
+  Future<int?> openMap(String mapId, [String? poi]) async {
     throw UnimplementedError('openMap() has not been implemented.');
   }
 }

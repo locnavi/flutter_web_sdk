@@ -50,11 +50,12 @@ public class LocnaviWebSdkPlugin implements FlutterPlugin, ActivityAware, Method
               .uploadInterval(uploadInterval)
               .uuids(uuids).debug(debug).build();
       LocNaviWebSDK.init(config);
-
+      result.success(0);
     } else if (call.method.equals("openMap")) {
       final String mapId = call.argument("mapId");
       final String poi = call.argument("poi");
       LocNaviWebSDK.openMap(activity.getApplicationContext(), mapId, poi);
+      result.success(0);
     }
     else {
       result.notImplemented();

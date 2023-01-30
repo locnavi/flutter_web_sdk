@@ -16,8 +16,8 @@ class MethodChannelLocnaviWebSdk extends LocnaviWebSdkPlatform {
   }
 
   @override
-  Future<void> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval: 1000, List<String>? uuids, debug: false }) async {
-    return methodChannel.invokeMethod<void>('init', {
+  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false }) async {
+    return methodChannel.invokeMethod<int>('init', {
       'appKey': appKey,
       'serverUrl': serverUrl,
       'uploadApi': uploadApi,
@@ -25,15 +25,13 @@ class MethodChannelLocnaviWebSdk extends LocnaviWebSdkPlatform {
       'uuids': uuids,
       'debug': debug
     });
-    return;
   }
 
   @override
-  Future<void> openMap(String mapId, [String? poi]) async {
-    return methodChannel.invokeMethod<void>('openMap', {
+  Future<int?> openMap(String mapId, [String? poi]) async {
+    return methodChannel.invokeMethod<int>('openMap', {
       'mapId': mapId,
       'poi': poi
     });
-    return;
   }
 }
