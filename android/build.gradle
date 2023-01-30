@@ -1,0 +1,43 @@
+group 'com.locnavi.websdk.flutter.locnavi_web_sdk'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+}
+
+dependencies {
+    implementation 'com.github.locnavi:3d-navigation-android-sdk:0.0.11'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'org.altbeacon:android-beacon-library:2.19.4'
+}

@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - locnavi_web_sdk (0.0.1):
+    - Flutter
+    - LocNaviWebSDK
+  - LocNaviWebSDK (0.1.4)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - locnavi_web_sdk (from `.symlinks/plugins/locnavi_web_sdk/ios`)
+
+SPEC REPOS:
+  trunk:
+    - LocNaviWebSDK
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  locnavi_web_sdk:
+    :path: ".symlinks/plugins/locnavi_web_sdk/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  locnavi_web_sdk: 287c922cad362684a672dce282e8adf5db92d225
+  LocNaviWebSDK: 1eaf644db69d9603a32b8b473d807cd9cb6c836f
+
+PODFILE CHECKSUM: 663715e941f9adb426e33bf9376914006f9ea95b
+
+COCOAPODS: 1.11.2
