@@ -23,6 +23,8 @@
       int uploadInterval = [obj isKindOfClass:[NSNull class]] ? 0 : [(NSNumber*)obj intValue];
       obj = call.arguments[@"uuids"];
       NSArray *uuids = [obj isKindOfClass:[NSNull class]] ? nil : (NSArray*)obj;
+      obj = call.arguments[@"userId"];
+      NSString *userId = [obj isKindOfClass:[NSNull class]] ? nil : (NSString*)obj;
 //      BOOL debug = [call.arguments[@"debug"] boolValue];
       
       if (appKey && appKey.length) {
@@ -39,6 +41,10 @@
       
       if (uploadApi) {
           [LocNaviMapService setUploadLocationApi:uploadApi timeInterval:uploadInterval];
+      }
+      
+      if (userId) {
+          [LocNaviMapService setUserId:userId];
       }
       result(@0);
   } else if ([@"openMap" isEqualToString:call.method]) {

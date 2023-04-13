@@ -42,11 +42,13 @@ public class LocnaviWebSdkPlugin implements FlutterPlugin, ActivityAware, Method
       final int uploadInterval = call.argument("uploadInterval");
       final String[] uuids = call.argument("uuids");
       final boolean debug = call.argument("debug");
+      final String userId = call.argument("userId");
 
       LocNaviWebSDK.Configuration config = new LocNaviWebSDK.Configuration
               .Builder(activity.getApplicationContext())
               .appKey(appKey).serverUrl(serverUrl)
               .uploadApi(uploadApi)
+              .userId(userId)
               .uploadInterval(uploadInterval)
               .uuids(uuids).debug(debug).build();
       LocNaviWebSDK.init(config);

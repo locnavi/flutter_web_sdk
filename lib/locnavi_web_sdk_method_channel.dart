@@ -16,14 +16,15 @@ class MethodChannelLocnaviWebSdk extends LocnaviWebSdkPlatform {
   }
 
   @override
-  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false }) async {
+  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false,String? userId }) async {
     return methodChannel.invokeMethod<int>('init', {
       'appKey': appKey,
       'serverUrl': serverUrl,
       'uploadApi': uploadApi,
       'uploadInterval': uploadInterval,
       'uuids': uuids,
-      'debug': debug
+      'debug': debug,
+      'userId': userId
     });
   }
 

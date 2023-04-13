@@ -54,7 +54,7 @@ appKey、mapId、targetName、targetId等信息請向 richard.chin@locnavi.com �
 ```dart
   _locnaviWebSdkPlugin.init('appkey');
   //或选择性 设置服务url、ibeacon的扫描uuid、定时上传定位数据及上传间隔
-  await _locnaviWebSdkPlugin.init('nqB6HPIU2C', serverUrl: 'https://xxx.com', uuids: ['uuid1', 'uuid2'], uploadApi: 'https://xxx.com', uploadInterval: 1000);
+  await _locnaviWebSdkPlugin.init('nqB6HPIU2C', serverUrl: 'https://xxx.com', uuids: ['uuid1', 'uuid2'], uploadApi: 'https://xxx.com', uploadInterval: 1000, userId:'testUser');
 ```
 
 ### 显示室内地图

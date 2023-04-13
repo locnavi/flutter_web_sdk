@@ -27,7 +27,7 @@ abstract class LocnaviWebSdkPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false }) async {
+  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false,String? userId }) async {
     throw UnimplementedError('setAppKey() has not been implemented.');
   }
 
