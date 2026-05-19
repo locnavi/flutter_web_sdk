@@ -8,3 +8,6 @@
 
 ## 0.0.3
 1、增加userId
+
+## 0.0.4
+1、修改Android的websdk版本路徑
