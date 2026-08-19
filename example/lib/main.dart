@@ -55,13 +55,18 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: TextButton(
-            child: Text('显示地图'),
-            onPressed: () {
-              _locnaviWebSdkPlugin.openMap('HHrzBwF5dY');
-            },
-          )
-          //Text('Running on: $_platformVersion\n'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Running on: $_platformVersion\n'),
+              TextButton(
+                child: Text('显示地图'),
+                onPressed: () {
+                  _locnaviWebSdkPlugin.openMap('HHrzBwF5dY');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
