@@ -7,7 +7,8 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+# 本相容線使用 pedantic（flutter_lints 需要 Dart >=2.17）。
+include: package:pedantic/analysis_options.1.9.0.yaml
 
 linter:
   # The lint rules applied to this project can be customized in the

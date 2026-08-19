@@ -9,13 +9,13 @@ class MockLocnaviWebSdkPlatform
     implements LocnaviWebSdkPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<String> getPlatformVersion() => Future.value('42');
 
   @override
-  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false, String? userId}) => Future.value(0);
+  Future<int> init(String appKey, {String serverUrl, String uploadApi, uploadInterval = 1000, List<String> uuids, debug = false, String userId}) => Future.value(0);
 
   @override
-  Future<int?> openMap(String mapId, [String? poi]) => Future.value(0);
+  Future<int> openMap(String mapId, [String poi]) => Future.value(0);
 }
 
 void main() {

@@ -1,22 +1,28 @@
 name: locnavi_web_sdk
 description: LocNaviWebSDK fullter plugin
-version: 0.0.4
+version: 0.1.0
 homepage: https://github.com/locnavi/flutter_web_sdk
 repository: https://github.com/locnavi/flutter_web_sdk
 
+# 相容線（legacy-1.22 分支）：服務仍停留在 Flutter 1.20 ~ 2.0 / Dart 2.7 ~ 2.11
+# 的使用者，因此本分支「不」啟用 null safety。
+# 版號必須永遠維持在 0.x，不得達到或超過 1.0.0，否則 pub 會把本分支的版本
+# 當成主線更新推送給所有使用者。主線（main）走 1.x。
 environment:
-  sdk: '>=2.19.0 <3.0.0'
-  flutter: ">=2.5.0"
+  sdk: '>=2.7.0 <3.0.0'
+  flutter: ">=1.20.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
+  # 2.x 需要 Dart >=2.12，此處使用 API 相容的 1.0.x
+  plugin_platform_interface: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  # flutter_lints 需要 Dart >=2.17，此處改用同期的 pedantic
+  pedantic: ^1.9.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

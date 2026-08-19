@@ -1,4 +1,10 @@
-include: package:flutter_lints/flutter.yaml
+include: package:pedantic/analysis_options.1.9.0.yaml
+
+linter:
+  rules:
+    # 主線使用的 flutter_lints 未啟用此規則。在相容線關閉，
+    # 可讓兩條線的 Dart 原始碼保持一致，減少 cherry-pick 衝突。
+    omit_local_variable_types: false
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

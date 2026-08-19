@@ -1,6 +1,32 @@
 # flutter_web_sdk
 LocNaviWebSDK 对应的fultter plugin，目前提供iOS、Android平台代码支持。
 
+## 版本對照
+
+本套件維護兩條版本線，`flutter pub get` 會依據專案的 Dart SDK 自動選擇適用版本。
+
+| 套件版本 | Flutter | Dart | Null Safety | 分支 |
+| --- | --- | --- | --- | --- |
+| `1.x` | >= 2.5.0 | >= 2.19.0 | 支援 | `main` |
+| `0.1.x` | >= 1.20.0 | >= 2.7.0 | 不支援 | `legacy-1.22` |
+
+### 安裝
+
+```bash
+flutter pub add locnavi_web_sdk
+```
+
+或直接於 `pubspec.yaml` 指定：
+
+```yaml
+dependencies:
+  locnavi_web_sdk: ^1.0.0   # Flutter 2.5 以上
+  # locnavi_web_sdk: ^0.1.0 # Flutter 1.20 ~ 2.0
+```
+
+> `0.1.x` 相容線僅修正缺陷，不再新增功能，版號固定維持在 `0.x`。
+> 兩條線的公開 API 完全相同，差別僅在型別是否標記為 nullable。
+
 ## SDK 文檔
 
 [iOS文檔](https://github.com/locnavi/locnavi-websdk-ios/blob/master/README.md)

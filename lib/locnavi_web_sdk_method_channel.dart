@@ -10,13 +10,13 @@ class MethodChannelLocnaviWebSdk extends LocnaviWebSdkPlatform {
   final methodChannel = const MethodChannel('locnavi_web_sdk');
 
   @override
-  Future<String?> getPlatformVersion() async {
+  Future<String> getPlatformVersion() async {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
 
   @override
-  Future<int?> init(String appKey, {String? serverUrl, String? uploadApi, uploadInterval = 1000, List<String>? uuids, debug = false,String? userId }) async {
+  Future<int> init(String appKey, {String serverUrl, String uploadApi, uploadInterval = 1000, List<String> uuids, debug = false,String userId }) async {
     return methodChannel.invokeMethod<int>('init', {
       'appKey': appKey,
       'serverUrl': serverUrl,
@@ -29,7 +29,7 @@ class MethodChannelLocnaviWebSdk extends LocnaviWebSdkPlatform {
   }
 
   @override
-  Future<int?> openMap(String mapId, [String? poi]) async {
+  Future<int> openMap(String mapId, [String poi]) async {
     return methodChannel.invokeMethod<int>('openMap', {
       'mapId': mapId,
       'poi': poi
