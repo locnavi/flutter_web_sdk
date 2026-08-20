@@ -10,7 +10,12 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+      // getPlatformVersion 走 invokeMethod<String>，init/openMap 走
+      // invokeMethod<int>，需依方法回傳對應型別，否則轉型會失敗。
+      if (methodCall.method == 'getPlatformVersion') {
+        return '42';
+      }
+      return 0;
     });
   });
 

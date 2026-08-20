@@ -40,4 +40,8 @@ dependencies {
     implementation 'com.github.locnavi:IndoorNavigationAndroidWebSDK:2.0.38'
     implementation 'com.orhanobut:logger:2.2.0'
     implementation 'org.altbeacon:android-beacon-library:2.19.4'
+    // LocalBroadcastManager 自 AppCompat 1.4 起不再由相依樹傳遞，
+    // 但原生 WebSDK 執行期需要，故由 plugin 自行宣告，
+    // 使用者不需再於自身 App 的 build.gradle 手動補上。
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 }
