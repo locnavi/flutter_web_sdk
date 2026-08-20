@@ -21,5 +21,8 @@
 3、plugin_platform_interface 降至 1.0.x（API 相容，公開介面未變更）
 4、flutter_lints 改用 pedantic 1.9.0
 5、公開 API（init / openMap / getPlatformVersion）與 0.0.4 完全一致，僅型別標記不同
+6、Android 端補上 `androidx.localbroadcastmanager:localbroadcastmanager:1.1.0`
+   —— AppCompat 1.4 起不再傳遞此相依，過去需要使用者自行於 App 的 build.gradle
+   手動加入，現由 plugin 自行宣告
 
 > 本線版號固定維持 0.x，不會達到 1.0.0。Flutter 2.5 以上請改用 1.x 主線。

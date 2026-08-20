@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               Text('Running on: $_platformVersion\n'),
               TextButton(
-                child: Text('显示地图'),
+                child: const Text('显示地图'),
                 onPressed: () {
                   _locnaviWebSdkPlugin.openMap('HHrzBwF5dY');
                 },
